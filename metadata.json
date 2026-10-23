@@ -1,0 +1,6 @@
+{
+  "name": "Lamirot & Biniyam Wedding",
+  "description": "Celebration of the holy matrimony of Lamirot and Biniyam in Addis Ababa, Ethiopia on November 14, 2026. RSVP, schedule, venues, and guestbook.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

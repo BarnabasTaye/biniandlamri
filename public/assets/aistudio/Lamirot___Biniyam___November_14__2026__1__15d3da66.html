@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lamirot &amp; Biniyam · November 14, 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{--bg:#faf6ee;--card:#fff;--ink:#23302a;--mute:#6b766f;--green:#1f3d33;--gold:#b08d4a;--line:#e5dcc8;--on-green:#faf6ee;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a16;--card:#1a2520;--ink:#efe9dc;--mute:#a3ada6;--green:#0c1511;--gold:#cfa95e;--line:#2c3a33;--on-green:#efe9dc}}
+:root[data-theme="dark"]{--bg:#121a16;--card:#1a2520;--ink:#efe9dc;--mute:#a3ada6;--green:#0c1511;--gold:#cfa95e;--line:#2c3a33;--on-green:#efe9dc}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Jost,system-ui,sans-serif;font-weight:300;line-height:1.7}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;margin:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--green);display:flex;gap:18px;justify-content:flex-start;padding:12px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex-shrink:0}
+nav a:first-child{margin-left:auto}
+nav a:last-child{margin-right:auto}
+nav a{color:var(--on-green);text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
+nav a:hover{color:var(--gold)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--green);z-index:6}
+.hero{background:radial-gradient(circle at 50% 30%,#2d5a4a,var(--green));color:var(--on-green);text-align:center;padding:90px 20px 70px}
+.hero small{letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-size:.8rem}
+.hero h1{font-size:clamp(2.6rem,10vw,5.5rem);line-height:1.05;margin:14px 0;font-style:italic}
+.hero h1 span{color:var(--gold)}
+.hero p{margin:6px 0;letter-spacing:.08em}
+#cd{display:flex;justify-content:center;gap:14px;margin-top:34px;flex-wrap:wrap}
+#cd div{border:1px solid var(--gold);min-width:74px;padding:10px 6px;border-radius:4px}
+#cd b{display:block;font:400 2rem 'Cormorant Garamond',serif}
+#cd i{font-style:normal;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{max-width:900px;margin:auto;padding:70px 20px}
+section>h2{text-align:center;font-size:2.6rem;color:var(--green)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) section>h2{color:var(--gold)}}
+.orn{text-align:center;color:var(--gold);letter-spacing:.5em;margin:6px 0 34px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:26px;text-align:center}
+.av{width:110px;height:110px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--gold),var(--green));display:grid;place-items:center;color:#fff;font:italic 3rem 'Cormorant Garamond',serif}
+.card h3{font-size:1.8rem}
+.story{max-width:640px;margin:34px auto 0;text-align:center;color:var(--mute)}
+.invite{background:var(--card);border:1px solid var(--gold);outline:1px solid var(--line);outline-offset:-10px;text-align:center;padding:54px 24px;max-width:560px;margin:auto}
+.invite h3{font-size:2.4rem;font-style:italic;color:var(--green)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .invite h3{color:var(--gold)}}
+.invite p{margin:8px 0}.big{font:600 1.5rem 'Cormorant Garamond',serif;letter-spacing:.06em}
+.btn{display:inline-block;background:var(--green);color:var(--on-green);border:0;padding:12px 28px;border-radius:2px;font:500 .8rem Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--gold)}
+.tl{position:relative;max-width:620px;margin:auto;padding-left:30px;border-left:1px solid var(--gold)}
+.tl div{position:relative;margin-bottom:26px}
+.tl div::before{content:"";position:absolute;left:-36px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--gold)}
+.tl b{font:600 1.15rem 'Cormorant Garamond',serif;color:var(--gold);letter-spacing:.05em}
+.tl h3{font-size:1.4rem}.tl p{margin:0;color:var(--mute);font-size:.92rem}
+.ph{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 22px;margin:0 auto 18px;max-width:700px}
+.ph h3{color:var(--gold);font-size:1.5rem;margin-bottom:8px}
+.ph ul{list-style:none;margin:0;padding:0}
+.ph li{display:grid;grid-template-columns:165px 1fr;gap:4px 14px;padding:9px 0;border-top:1px solid var(--line)}
+.ph li b{font-weight:500;color:var(--green)}
+.ph li em{grid-column:2;font-style:normal;color:var(--mute);font-size:.8rem;margin-top:-4px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ph li b{color:var(--gold)}}
+@media(max-width:560px){.ph li{grid-template-columns:1fr}.ph li em{grid-column:1}}
+.must{background:var(--green);color:var(--on-green);text-align:center;padding:14px;border-radius:4px;margin-top:10px}
+.venues{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:640px){.venues{grid-template-columns:1fr}}
+.venues a{color:var(--gold)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.gal figure{margin:0;aspect-ratio:1;border-radius:4px;overflow:hidden;background:linear-gradient(135deg,var(--line),var(--card));display:grid;place-items:center;color:var(--mute);font-size:.8rem;text-align:center;padding:8px}
+.gal img{width:100%;height:100%;object-fit:cover}
+form{display:grid;gap:12px;max-width:520px;margin:auto}
+input,textarea,select{width:100%;padding:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:3px;font:inherit}
+.wishes{max-width:620px;margin:34px auto 0;display:grid;gap:14px}
+.wish{background:var(--card);border-left:3px solid var(--gold);padding:14px 18px;border-radius:3px}
+.wish p{margin:0 0 6px;white-space:pre-wrap;overflow-wrap:anywhere}.wish small{color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+.note{text-align:center;color:var(--mute);font-size:.85rem;min-height:1.4em}
+footer{background:var(--green);color:var(--on-green);text-align:center;padding:40px 20px}
+footer h3{font-size:2rem;font-style:italic}
+#petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:4}
+#petals i{position:absolute;top:-8%;opacity:.75;border-radius:80% 0 80% 0;font-style:normal;animation:fall linear infinite}
+#petals i.fl{border-radius:0;background:none!important;width:auto;height:auto}
+@keyframes fall{0%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(var(--dx),55vh,0) rotate(180deg)}100%{transform:translate3d(calc(var(--dx)*-.5),115vh,0) rotate(400deg)}}
+@keyframes float{50%{transform:translateY(-8px)}}
+.arch{position:relative;width:min(230px,60vw);aspect-ratio:3/4;margin:0 auto 26px;border-radius:999px 999px 14px 14px;border:2px solid var(--gold);padding:7px;box-shadow:0 0 0 7px rgba(176,141,74,.18),0 22px 50px rgba(0,0,0,.4);animation:float 6s ease-in-out infinite}
+.arch .in{width:100%;height:100%;border-radius:999px 999px 8px 8px;overflow:hidden;background:linear-gradient(160deg,#3b6b58,#16302a);display:grid;place-items:center;color:var(--gold);text-align:center}
+.arch img{width:100%;height:100%;object-fit:cover;display:block}
+.arch .bl{font:italic 3.2rem/1.1 'Cormorant Garamond',Georgia,serif}
+.arch::before,.arch::after{position:absolute;font-size:1.8rem;content:'🌸'}
+.arch::before{top:18%;left:-16px}.arch::after{content:'🌼';bottom:12%;right:-14px}
+#hadd{margin-top:-8px;margin-bottom:10px}
+@media (prefers-reduced-motion:reduce){#petals{display:none}.arch{animation:none}}
+</style>
+</head>
+<body>
+<div id="petals" aria-hidden="true"></div>
+<nav><a href="#top">Home</a><a href="#about">About Us</a><a href="#invitation">Invitation</a><a href="#schedule">The Day</a><a href="#venues">Venues</a><a href="#gallery">Gallery</a><a href="#rsvp">RSVP</a><a href="#wishes">Guestbook</a></nav>
+
+<header class="hero" id="top">
+<div class="arch"><div class="in" id="hp"><div class="bl">B<br>&amp;<br>L</div></div></div>
+<div id="hadd"></div>
+<small>Together with their families</small>
+<h1>Lamirot <span>&amp;</span> Biniyam</h1>
+<p>Saturday · November 14, 2026</p>
+<p>Addis Ababa, Ethiopia</p>
+<div id="cd"></div>
+</header>
+
+<section id="about">
+<h2>About Us</h2><div class="orn">✦ ✦ ✦</div>
+<div class="two">
+<div class="card"><div class="av">L</div><h3>Lamirot</h3><p style="color:var(--mute)">The bride. Warm, bright and the heart of every room she walks into.</p></div>
+<div class="card"><div class="av">B</div><h3>Biniyam</h3><p style="color:var(--mute)">The groom. Steady, thoughtful and always ready with a smile.</p></div>
+</div>
+<p class="story">Two hearts, one story. From the first hello to a lifetime of tomorrows, we are so grateful to share this chapter with the people we love most. Thank you for being part of our journey.</p>
+</section>
+
+<section id="invitation" style="background:linear-gradient(var(--bg),var(--line) 50%,var(--bg))">
+<h2>Invitation</h2><div class="orn">✦ ✦ ✦</div>
+<div class="invite">
+<p style="letter-spacing:.25em;text-transform:uppercase;font-size:.75rem;color:var(--gold)">You are warmly invited</p>
+<h3>Lamirot &amp; Biniyam</h3>
+<p>to celebrate their wedding</p>
+<p class="big">Saturday, November 14, 2026</p>
+<p>Holy Matrimony · Gerji Muluwengel Church<br>2:30 PM (8:30 Ethiopian time)</p>
+<p>Wedding Dinner · The Glasshouse, Kazanchis<br><b>Guests kindly seated by 6:00 PM</b></p>
+<p style="margin-top:24px"><a class="btn" href="#rsvp">Kindly RSVP</a></p>
+</div>
+</section>
+
+<section id="schedule">
+<h2>The Day</h2><div class="orn">✦ ✦ ✦</div>
+<p class="note" style="margin-bottom:22px">Times shown on the standard clock, with Ethiopian time in grey beneath each one.</p>
+<div class="ph"><h3>Early Morning Preparation</h3><ul>
+<li><b>3:00 – 6:00 AM</b><span>Bride’s makeup time</span><em>9:00 – 12:00 ET (night)</em></li>
+<li><b>7:00 – 10:00 AM</b><span>Bride &amp; groom photoshoot at the hotel</span><em>1:00 – 4:00 ET</em></li></ul></div>
+<div class="ph"><h3>Morning at Home</h3><ul>
+<li><b>10:30 AM – 1:00 PM</b><span>Bride’s home: breakfast &amp; family photo session</span><em>4:30 – 7:00 ET</em></li>
+<li><b>10:30 AM – 12:00 PM</b><span>Groom’s home: breakfast &amp; family photo session</span><em>4:30 – 6:00 ET</em></li>
+<li><b>12:00 – 12:30 PM</b><span>Departure from the groom’s house</span><em>6:00 – 6:30 ET</em></li></ul></div>
+<div class="ph"><h3>At the Bride’s House</h3><ul>
+<li><b>12:30 – 1:00 PM</b><span>Travel to the bride’s house</span><em>6:30 – 7:00 ET</em></li>
+<li><b>1:00 – 1:30 PM</b><span>Time at the bride’s house</span><em>7:00 – 7:30 ET</em></li>
+<li><b>1:30 – 2:00 PM</b><span>Send-off ceremony for the couple</span><em>7:30 – 8:00 ET</em></li>
+<li><b>2:00 – 2:30 PM</b><span>Travel to the church</span><em>8:00 – 8:30 ET</em></li></ul></div>
+<div class="ph"><h3>Church Service &amp; Vows</h3><ul>
+<li><b>2:30 – 3:00 PM</b><span>Worship &amp; entrance of the bride and groom into the church</span><em>8:30 – 9:00 ET</em></li>
+<li><b>3:00 – 3:30 PM</b><span>Worship</span><em>9:00 – 9:30 ET</em></li>
+<li><b>3:30 – 4:00 PM</b><span>Word of God (sermon)</span><em>9:30 – 10:00 ET</em></li>
+<li><b>4:00 – 4:30 PM</b><span>Exchange of vows</span><em>10:00 – 10:30 ET</em></li>
+<li><b>4:30 – 5:00 PM</b><span>Worship</span><em>10:30 – 11:00 ET</em></li></ul></div>
+<div class="ph"><h3>Break &amp; Preparation</h3><ul>
+<li><b>5:00 – 6:00 PM</b><span>Rest, outfit change &amp; makeup touch-up for the couple</span><em>11:00 – 12:00 ET</em></li>
+<li><b>6:00 – 6:30 PM</b><span>Travel to the dinner hall</span><em>12:00 – 12:30 ET</em></li></ul></div>
+<div class="ph"><h3>Dinner &amp; Evening Reception</h3><ul>
+<li><b>6:30 – 6:45 PM</b><span>Couple’s entrance with worship, welcomed by the family</span><em>12:30 – 12:45 ET</em></li>
+<li><b>6:45 – 7:00 PM</b><span>Worship</span><em>12:45 – 1:00 ET</em></li>
+<li><b>7:00 – 7:15 PM</b><span>Sharing the Gospel, blessing &amp; prayer over the dinner</span><em>1:00 – 1:15 ET</em></li>
+<li><b>7:15 – 7:45 PM</b><span>Dinner time</span><em>1:15 – 1:45 ET</em></li>
+<li><b>7:45 – 8:00 PM</b><span>Parental blessing &amp; thanks to guests</span><em>1:45 – 2:00 ET</em></li>
+<li><b>8:00 – 8:30 PM</b><span>Worship</span><em>2:00 – 2:30 ET</em></li>
+<li><b>8:30 – 9:30 PM</b><span>Cake cutting ceremony &amp; worship</span><em>2:30 – 3:30 ET</em></li>
+<li><b>9:30 – 10:30 PM</b><span>Photos with family &amp; friends, gift presentation</span><em>3:30 – 4:30 ET</em></li>
+<li><b>10:30 – 11:00 PM</b><span>Couple departs for the honeymoon suite</span><em>4:30 – 5:00 ET</em></li></ul></div>
+<p class="must" style="max-width:620px;margin:20px auto 0">Dinner guests, please arrive by <b>6:00 PM sharp</b>.</p>
+</section>
+
+<section id="venues" style="background:var(--card)">
+<h2>Venues</h2><div class="orn">✦ ✦ ✦</div>
+<div class="venues">
+<div class="card"><h3>Gerji Muluwengel Church</h3><p style="color:var(--mute)">Wedding ceremony<br>2:30 – 5:00 PM<br>Gerji, Addis Ababa</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gerji+Muluwengel+Church+Addis+Ababa">Directions</a></div>
+<div class="card"><h3>The Glasshouse</h3><p style="color:var(--mute)">Dinner program<br>Arrive by 6:00 PM<br>Kazanchis, Addis Ababa</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The+Glasshouse+Kazanchis+Addis+Ababa">Directions</a></div>
+</div>
+</section>
+
+<section id="gallery">
+<h2>Gallery</h2><div class="orn">✦ ✦ ✦</div>
+<div class="gal" id="gal"></div>
+<p class="note" id="galnote" style="margin-top:16px"></p>
+<div style="text-align:center" id="galadd"></div>
+</section>
+
+<section id="rsvp" style="background:var(--card)">
+<h2>RSVP</h2><div class="orn">✦ ✦ ✦</div>
+<form id="rf">
+<input id="rn" placeholder="Your full name" required maxlength="80">
+<select id="ra"><option value="yes">Joyfully accepts</option><option value="no">Regretfully declines</option></select>
+<input id="rg" type="number" min="1" max="10" value="1" aria-label="Number of guests">
+<button class="btn" type="submit">Send RSVP</button>
+<div class="note" id="rnote"></div>
+</form>
+<p class="note" id="rcount"></p>
+</section>
+
+<section id="wishes">
+<h2>Guestbook</h2><div class="orn">✦ ✦ ✦</div>
+<form id="wf">
+<input id="wn" placeholder="Your name" required maxlength="60">
+<textarea id="wm" rows="4" placeholder="Leave a wish, blessing or memory for Lamirot &amp; Biniyam…" required maxlength="600"></textarea>
+<button class="btn" type="submit">Sign the guestbook</button>
+<div class="note" id="wnote"></div>
+</form>
+<div class="wishes" id="wl"></div>
+</section>
+
+<footer><h3>Lamirot &amp; Biniyam</h3><p>11 · 14 · 2026<br>With love and gratitude</p></footer>
+
+<script>
+var T=new Date('2026-11-14T14:30:00+03:00');
+function tick(){var d=Math.max(0,T-new Date()),u=[['Days',864e5],['Hours',36e5],['Mins',6e4],['Secs',1e3]],h='';
+u.forEach(function(x){var v=Math.floor(d/x[1]);d-=v*x[1];h+='<div><b>'+v+'</b><i>'+x[0]+'</i></div>'});
+document.getElementById('cd').innerHTML=h}
+tick();setInterval(tick,1000);petals();
+
+function esc(s){var e=document.createElement('div');e.textContent=s;return e.innerHTML}
+function $(i){return document.getElementById(i)}
+var db=null,isOwner=false,local=[];
+function renderWishes(list){
+  $('wl').innerHTML=list.map(function(w){return '<div class="wish"><p>'+esc(w.msg)+'</p><small>— '+esc(w.name)+'</small></div>'}).join('')||'<p class="note">Be the first to leave a wish.</p>';
+}
+function sortWishes(a,b){return (b.ts||0)-(a.ts||0)}
+
+(async function init(){
+  try{db=await claude.use('db')}catch(e){db=null}
+  try{var u=await claude.use('user');isOwner=u?u.isOwner():false}catch(e){}
+  if(db){
+    db.collection('wishes').onSnapshot(function(s){renderWishes(s.docs.map(function(d){return d.data()}).sort(sortWishes))},function(){renderWishes(local)});
+    db.collection('gallery').onSnapshot(function(s){renderGallery(s.docs.map(function(d){return d.data()}).sort(function(a,b){return (a.ts||0)-(b.ts||0)}))},function(){renderGallery([])});
+    db.doc('site/hero').onSnapshot(function(s){var d=s.exists&&s.data();if(d&&d.url){var im=new Image();im.alt='Bini and Lamri';im.src=d.url;$('hp').innerHTML='';$('hp').appendChild(im)}});
+    if(isOwner)db.collection('rsvps').onSnapshot(function(s){var y=0,g=0;s.docs.forEach(function(d){var r=d.data();if(r.attending==='yes'){y++;g+=+r.guests||1}});$('rcount').textContent='Owner view: '+y+' accepting RSVPs · '+g+' guests'});
+  }else{renderWishes(local);renderGallery([])}
+  try{var as=await claude.use('assets');if(as&&isOwner&&db){heroUp(as);
+    $('galadd').innerHTML='<label class="btn">Add photos<input id="up" type="file" accept="image/*" multiple hidden></label>';
+    $('up').onchange=async function(e){$('galnote').textContent='Uploading…';
+      for(var f of e.target.files){try{var r=await as.upload(f);await db.collection('gallery').doc('p'+Date.now()+Math.random().toString(36).slice(2,6)).set({url:r.url,ts:Date.now()})}catch(x){$('galnote').textContent='Upload failed. Try a smaller image.';return}}
+      $('galnote').textContent=''}}}catch(e){}
+})();
+
+function petals(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var c=$('petals'),cols=['#f4c2cf','#fbe3e8','#f7d9a8','#ffffff','#e8a0b4'];
+  for(var i=0;i<22;i++){var p=document.createElement('i'),s=10+Math.random()*16;
+    if(i%5===0){p.className='fl';p.textContent=['🌸','🌼','🌷'][i%3];p.style.fontSize=(16+Math.random()*14)+'px'}
+    else{p.style.width=s+'px';p.style.height=(s*1.4)+'px';p.style.background=cols[i%5]}
+    p.style.left=Math.random()*100+'%';p.style.animationDuration=(10+Math.random()*12)+'s';p.style.animationDelay=(-Math.random()*20)+'s';p.style.setProperty('--dx',(Math.random()*160-80)+'px');c.appendChild(p)}
+}
+function heroUp(as){
+  $('hadd').innerHTML='<label class="btn">Add hero photo<input id="hup" type="file" accept="image/*" hidden></label>';
+  $('hup').onchange=async function(e){var f=e.target.files[0];if(!f)return;
+    try{var r=await as.upload(f);await db.doc('site/hero').set({url:r.url,ts:Date.now()})}catch(x){$('hadd').insertAdjacentHTML('beforeend','<p class="note">Upload failed. Try a smaller image.</p>')}}
+}
+function renderGallery(ph){
+  var h=ph.map(function(p){return '<figure><img loading="lazy" alt="Bini and Lamri" src="'+esc(p.url)+'"></figure>'});
+  var caps=['Our first hello','Adventures together','The proposal','Family &amp; friends','Engagement day','Coming soon'];
+  while(h.length<6)h.push('<figure>'+caps[h.length]+'<br>(photo coming soon)</figure>');
+  $('gal').innerHTML=h.join('');
+}
+
+$('wf').onsubmit=async function(e){e.preventDefault();
+  var w={name:$('wn').value.trim(),msg:$('wm').value.trim(),ts:Date.now()};if(!w.name||!w.msg)return;
+  try{
+    if(db){await db.collection('wishes').doc('w'+w.ts+Math.random().toString(36).slice(2,6)).set(w)}
+    else{local.unshift(w);renderWishes(local)}
+    $('wnote').textContent='Thank you! Your wish has been added ♡';$('wf').reset();
+  }catch(x){$('wnote').textContent='Sorry, we couldn’t save your wish. Please try again.'}
+};
+$('rf').onsubmit=async function(e){e.preventDefault();
+  var r={name:$('rn').value.trim(),attending:$('ra').value,guests:+$('rg').value||1,ts:Date.now()};
+  try{
+    if(!db)throw 0;
+    await db.collection('rsvps').doc('r'+r.ts+Math.random().toString(36).slice(2,6)).set(r);
+    $('rnote').textContent=r.attending==='yes'?'Thank you, we can’t wait to celebrate with you!':'We’ll miss you. Thank you for letting us know.';$('rf').reset();
+  }catch(x){$('rnote').textContent='RSVP is unavailable right now. Please confirm directly with Bini or Lamri.'}
+};
+</script>
+</body>
+</html>
