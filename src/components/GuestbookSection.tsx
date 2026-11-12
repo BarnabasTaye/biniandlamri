@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Heart, Send, MessageCircle } from 'lucide-react';
 import { INITIAL_WISHES, WishItem } from '../data/weddingData.ts';
 
+const REMOVED_WISH_IDS = new Set(['w-1', 'w-2', 'w-3', 'w-4']);
+
 export const GuestbookSection: React.FC = () => {
   const [wishes, setWishes] = useState<WishItem[]>(() => {
     try {
       const stored = localStorage.getItem('lb_wedding_wishes');
       if (stored) {
         const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed)) return parsed;
+        if (Array.isArray(parsed)) {
+          return parsed.filter((item) => item && !REMOVED_WISH_IDS.has(item.id));
+        }
       }
     } catch {
       // fallback

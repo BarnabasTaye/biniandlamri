@@ -254,42 +254,7 @@ export const SCHEDULE_DATA: { phase: string; category: 'groom' | 'bride' | 'chur
   },
 ];
 
-export const INITIAL_WISHES: WishItem[] = [
-  {
-    id: 'w-1',
-    name: 'Ato Yohannes & W/ro Rahel',
-    relationship: 'Family Elders',
-    amharicText: 'መልካም የጋብቻ ዘመን ይሁንላችሁ! እግዚአብሔር ቤታችሁን በበረከት፣ በፍቅርና በሰላም ይሙላው።',
-    message: 'May the Almighty God bless your union abundantly. May your home be a sanctuary of unending peace, laughter, and grace!',
-    timestamp: Date.now() - 1000 * 60 * 60 * 72,
-    likes: 24,
-  },
-  {
-    id: 'w-2',
-    name: 'Marta & Dawit (Washington D.C.)',
-    relationship: 'Cousins & Diaspora Family',
-    message: 'So overjoyed for you both! Watching your love story flourish across the years has been pure joy. Can’t wait to celebrate in Addis this November!',
-    timestamp: Date.now() - 1000 * 60 * 60 * 48,
-    likes: 19,
-  },
-  {
-    id: 'w-3',
-    name: 'Pastor Samuel & Church Youth Fellowship',
-    relationship: 'Gerji Muluwengel Church',
-    amharicText: 'ፍቅር ይታገሣል፥ ቸርነትንም ያደርጋል፤ ፍቅር አይቀናም፤ ፍቅር አይመካም (1 ቆሮ 13:4)',
-    message: 'Congratulations Bini & Lami! You are both shining lights and an inspiration to our community. Standing with you in constant prayer and thanksgiving.',
-    timestamp: Date.now() - 1000 * 60 * 60 * 24,
-    likes: 31,
-  },
-  {
-    id: 'w-4',
-    name: 'Kalkidan Assefa',
-    relationship: 'Maid of Honor & Lifelong Friend',
-    message: 'To my dearest Bini and Lami: two of the kindest souls entering into God’s most sacred covenant. Count down is real!',
-    timestamp: Date.now() - 1000 * 60 * 60 * 12,
-    likes: 28,
-  },
-];
+export const INITIAL_WISHES: WishItem[] = [];
 
 export const INITIAL_GALLERY: GalleryPhoto[] = [
   {
