@@ -81,7 +81,7 @@ export const GallerySection: React.FC = () => {
     const newPhoto: GalleryPhoto = {
       id: `custom-${Date.now()}`,
       title: uploadTitle.trim() || 'Cherished Memory',
-      subtitle: 'Shared with love for Lamirot & Biniyam',
+      subtitle: 'Shared with love for Biniyam & Lamirot',
       category: uploadCategory,
       imageUrl: uploadPreview,
       isUserUploaded: true,
@@ -168,22 +168,23 @@ export const GallerySection: React.FC = () => {
           </button>
         </div>
 
-        {/* Grid of Photos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grid of Photos — portrait frames so every photo fills its card edge to edge */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {filteredPhotos.map((photo, idx) => (
             <div
               key={photo.id}
               onClick={() => openLightbox(idx)}
-              className="group cursor-pointer bg-white border border-[#E5DCC8] rounded-xs overflow-hidden shadow-xs hover:border-[#B68D40]/70 transition-all hover:-translate-y-1"
+              className="group cursor-pointer bg-white border border-[#E5DCC8] rounded-xs overflow-hidden shadow-xs hover:border-[#B68D40]/70"
             >
-              <div className="aspect-[4/3] w-full overflow-hidden bg-[#FAF7F2] relative">
+              <div className="aspect-[3/4] w-full overflow-hidden bg-[#EFE9DC] relative">
                 <SafeImage
                   src={photo.imageUrl}
                   alt={photo.title}
                   fallbackLabel={photo.title}
-                  className="group-hover:scale-105 transition-transform duration-700"
+                  objectFit="cover"
+                  objectPosition="center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 flex items-end p-4">
                   <span className="text-white text-xs font-sans uppercase tracking-widest flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-[#D6B368]" /> View Fullscreen
                   </span>
@@ -198,6 +199,12 @@ export const GallerySection: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {filteredPhotos.length === 0 && (
+          <p className="text-center text-sm text-[#6B766F] font-sans bg-white border border-[#E5DCC8] rounded-xs py-10 px-6">
+            No photos in this category yet. Choose &ldquo;All Photos&rdquo; or add a memory photo.
+          </p>
+        )}
 
         {/* Lightbox Modal */}
         {lightboxIndex !== null && filteredPhotos[lightboxIndex] && (
@@ -230,14 +237,15 @@ export const GallerySection: React.FC = () => {
             </button>
 
             <div
-              className="max-w-4xl max-h-[85vh] flex flex-col items-center"
+              className="w-full max-w-4xl max-h-[85vh] flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative max-h-[70vh] rounded overflow-hidden">
+              <div className="relative w-full h-[70vh] rounded overflow-hidden flex items-center justify-center">
                 <SafeImage
                   src={filteredPhotos[lightboxIndex].imageUrl}
                   alt={filteredPhotos[lightboxIndex].title}
-                  className="max-h-[70vh] w-auto object-contain"
+                  objectFit="contain"
+                  containerClassName="h-full w-full"
                 />
               </div>
               <div className="text-center mt-4 text-white">

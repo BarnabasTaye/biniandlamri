@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Send, MessageCircle } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import { INITIAL_WISHES, WishItem } from '../data/weddingData.ts';
 
 export const GuestbookSection: React.FC = () => {
@@ -68,13 +67,6 @@ export const GuestbookSection: React.FC = () => {
     setName('');
     setRelationship('');
     setMessage('');
-
-    confetti({
-      particleCount: 50,
-      spread: 50,
-      origin: { y: 0.8 },
-      colors: ['#D6B368', '#B68D40', '#1B382B'],
-    });
   };
 
   const handleLike = (id: string) => {
@@ -113,7 +105,7 @@ export const GuestbookSection: React.FC = () => {
             <span className="h-[1px] w-8 bg-[#B68D40]/40" />
           </div>
           <p className="text-xs sm:text-sm text-[#526458] font-sans mt-3 max-w-md mx-auto">
-            Leave a prayer, scripture, memory, or congratulatory note for Lamirot &amp; Biniyam to cherish forever.
+            Leave a prayer, scripture, memory, or congratulatory note for Biniyam &amp; Lamirot to cherish forever.
           </p>
         </div>
 

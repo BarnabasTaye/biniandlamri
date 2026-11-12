@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Sparkles, Menu, X } from 'lucide-react';
+import { Volume2, VolumeX, Menu, X } from 'lucide-react';
 import { ambientAudio } from '../utils/audioSynth.ts';
 
-interface NavigationProps {
-  petalsEnabled: boolean;
-  onTogglePetals: () => void;
-}
-
-export const Navigation: React.FC<NavigationProps> = ({ petalsEnabled, onTogglePetals }) => {
+export const Navigation: React.FC = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,12 +29,11 @@ export const Navigation: React.FC<NavigationProps> = ({ petalsEnabled, onToggleP
   };
 
   const navLinks = [
-    { label: 'Our Story', href: '#story' },
+    { label: 'Invitation', href: '#invitation' },
     { label: 'The Day', href: '#schedule' },
     { label: 'Venues', href: '#venues' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Guestbook', href: '#guestbook' },
-    { label: 'Details', href: '#details' },
   ];
 
   return (
@@ -52,12 +46,13 @@ export const Navigation: React.FC<NavigationProps> = ({ petalsEnabled, onToggleP
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-8">
-          {/* Zone 1: Single text element wordmark */}
+          {/* Zone 1: B&L logo mark */}
           <a
             href="#top"
-            className="font-serif italic text-xl md:text-2xl tracking-wide text-[#FAF7F2] hover:text-[#D6B368] transition-colors whitespace-nowrap shrink-0"
+            aria-label="Biniyam & Lamirot"
+            className="font-serif text-2xl md:text-3xl tracking-[0.12em] text-[#FAF7F2] hover:text-[#D6B368] transition-colors whitespace-nowrap shrink-0"
           >
-            Lamirot <span className="text-[#D6B368] font-normal not-italic">&amp;</span> Biniyam
+            B<span className="text-[#D6B368]">&amp;</span>L
           </a>
 
           {/* Zone 2: 4–5 clean single-line text navigation links */}
@@ -90,27 +85,12 @@ export const Navigation: React.FC<NavigationProps> = ({ petalsEnabled, onToggleP
               {isAudioPlaying ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
             </button>
 
-            {/* Petals toggle */}
-            <button
-              type="button"
-              onClick={onTogglePetals}
-              className={`hidden sm:flex p-2 rounded-full border transition-all duration-200 text-xs items-center justify-center ${
-                petalsEnabled
-                  ? 'border-[#D6B368] bg-[#D6B368]/20 text-[#D6B368]'
-                  : 'border-[#FAF7F2]/20 hover:border-[#FAF7F2]/50 text-[#FAF7F2]/75 hover:text-[#FAF7F2]'
-              }`}
-              title={petalsEnabled ? 'Pause falling petals' : 'Enable falling petals'}
-              aria-label="Toggle falling petals"
-            >
-              <Sparkles className="w-4 h-4" />
-            </button>
-
             {/* Primary CTA */}
             <a
-              href="#rsvp"
+              href="#schedule"
               className="hidden sm:inline-block px-4 py-2 text-xs font-sans font-semibold uppercase tracking-[0.16em] text-[#152B20] bg-[#D6B368] hover:bg-[#E8C882] rounded-xs transition-colors whitespace-nowrap shrink-0 shadow-sm"
             >
-              RSVP Now
+              View Program
             </a>
 
             {/* Mobile menu trigger */}
@@ -144,11 +124,11 @@ export const Navigation: React.FC<NavigationProps> = ({ petalsEnabled, onToggleP
               </a>
             ))}
             <a
-              href="#rsvp"
+              href="#schedule"
               onClick={() => setMobileMenuOpen(false)}
               className="mt-2 py-3 bg-[#D6B368] text-[#152B20] font-sans font-bold uppercase tracking-widest text-xs rounded-xs"
             >
-              RSVP for the Wedding
+              View the Program
             </a>
           </div>
         )}

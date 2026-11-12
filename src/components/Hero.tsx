@@ -10,13 +10,15 @@ export const Hero: React.FC = () => {
     seconds: 0,
   });
 
-  const [heroImage, setHeroImage] = useState<string | null>(() => {
+  const [customHeroImage, setCustomHeroImage] = useState<string | null>(() => {
     try {
       return localStorage.getItem('lb_wedding_hero_image') || null;
     } catch {
       return null;
     }
   });
+  const [heroImageFailed, setHeroImageFailed] = useState(false);
+  const heroImage = customHeroImage || '/images/couple-veil.jpg';
 
   const [calDropdownOpen, setCalDropdownOpen] = useState(false);
   const [photoUploadedToast, setPhotoUploadedToast] = useState(false);
@@ -48,7 +50,8 @@ export const Hero: React.FC = () => {
     const reader = new FileReader();
     reader.onload = () => {
       const result = reader.result as string;
-      setHeroImage(result);
+      setCustomHeroImage(result);
+      setHeroImageFailed(false);
       try {
         localStorage.setItem('lb_wedding_hero_image', result);
       } catch {
@@ -61,7 +64,8 @@ export const Hero: React.FC = () => {
   };
 
   const handleResetHero = () => {
-    setHeroImage(null);
+    setCustomHeroImage(null);
+    setHeroImageFailed(false);
     try {
       localStorage.removeItem('lb_wedding_hero_image');
     } catch {
@@ -71,13 +75,13 @@ export const Hero: React.FC = () => {
 
   // Google Calendar URL generator
   const googleCalUrl = () => {
-    const title = encodeURIComponent('Lamirot & Biniyam Wedding');
+    const title = encodeURIComponent('Biniyam & Lamirot Wedding');
     const details = encodeURIComponent(
-      'Holy Matrimony at Gerji Muluwengel Church (2:30 PM), followed by Dinner & Celebration at The Glasshouse, Kazanchis (seated by 6:00 PM). Addis Ababa, Ethiopia.'
+      'Holy Matrimony at Gerji Muluwengel Church (2:00 PM / 8:00 Ethiopian time), followed by Dinner & Celebration at The Glasshouse, Kazanchis (seated by 6:00 PM). Addis Ababa, Ethiopia.'
     );
     const location = encodeURIComponent('Gerji Muluwengel Church & The Glasshouse, Addis Ababa, Ethiopia');
-    // 2026-11-14 14:30 Addis time (UTC+3) -> UTC 11:30
-    const startIso = '20261114T113000Z';
+    // 2026-11-14 14:00 Addis time (UTC+3) -> UTC 11:00
+    const startIso = '20261114T110000Z';
     const endIso = '20261114T200000Z';
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startIso}/${endIso}&details=${details}&location=${location}`;
   };
@@ -87,14 +91,14 @@ export const Hero: React.FC = () => {
     const icsData = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Lamirot & Biniyam Wedding//EN',
+      'PRODID:-//Biniyam & Lamirot Wedding//EN',
       'BEGIN:VEVENT',
-      'UID:wedding-lamirot-biniyam-2026@addis',
+      'UID:wedding-biniyam-lamirot-2026@addis',
       'DTSTAMP:20261022T000000Z',
-      'DTSTART:20261114T113000Z',
+      'DTSTART:20261114T110000Z',
       'DTEND:20261114T200000Z',
-      'SUMMARY:Lamirot & Biniyam Wedding Ceremony & Dinner',
-      'DESCRIPTION:Holy Matrimony at Gerji Muluwengel Church (2:30 PM), followed by dinner at The Glasshouse (seated by 6:00 PM).',
+      'SUMMARY:Biniyam & Lamirot Wedding Ceremony & Dinner',
+      'DESCRIPTION:Holy Matrimony at Gerji Muluwengel Church (2:00 PM / 8:00 Ethiopian time), followed by dinner at The Glasshouse (seated by 6:00 PM).',
       'LOCATION:Addis Ababa, Ethiopia',
       'STATUS:CONFIRMED',
       'END:VEVENT',
@@ -126,13 +130,14 @@ export const Hero: React.FC = () => {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
         {/* Arch Monogram / Couple Portrait */}
-        <div className="relative mx-auto mb-8 w-44 h-60 sm:w-52 sm:h-72 rounded-t-[100px] rounded-b-2xl p-2 border-2 border-[#D6B368]/80 shadow-[0_0_0_8px_rgba(214,179,104,0.15),0_20px_40px_rgba(0,0,0,0.5)] animate-gentle-float group">
-          <div className="w-full h-full rounded-t-[92px] rounded-b-xl overflow-hidden bg-gradient-to-br from-[#244737] to-[#12241C] flex flex-col items-center justify-center relative">
-            {heroImage ? (
+        <div className="relative mx-auto mb-8 w-60 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[26rem] rounded-t-[130px] sm:rounded-t-[150px] md:rounded-t-[170px] rounded-b-2xl p-2 border-2 border-[#D6B368]/80 shadow-[0_0_0_8px_rgba(214,179,104,0.15),0_20px_40px_rgba(0,0,0,0.5)] group">
+          <div className="w-full h-full rounded-t-[122px] sm:rounded-t-[142px] md:rounded-t-[162px] rounded-b-xl overflow-hidden bg-gradient-to-br from-[#244737] to-[#12241C] flex flex-col items-center justify-center relative">
+            {!heroImageFailed ? (
               <img
                 src={heroImage}
-                alt="Lamirot & Biniyam"
-                className="w-full h-full object-cover"
+                alt="Biniyam & Lamirot on their wedding day"
+                onError={() => setHeroImageFailed(true)}
+                className="w-full h-full object-cover object-center"
               />
             ) : (
               <div className="flex flex-col items-center justify-center p-4">
@@ -151,40 +156,27 @@ export const Hero: React.FC = () => {
             )}
 
             {/* Quick photo upload button on hover for personalization */}
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity flex flex-col items-center justify-center p-3 gap-2">
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 flex flex-col items-center justify-center p-3 gap-2">
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 className="px-3 py-1.5 bg-[#D6B368] text-[#152B20] text-xs font-semibold rounded uppercase tracking-wider flex items-center gap-1.5 shadow"
               >
                 <Upload className="w-3.5 h-3.5" />
-                {heroImage ? 'Change Photo' : 'Add Photo'}
+                {customHeroImage ? 'Change Photo' : 'Add Your Photo'}
               </button>
-              {heroImage && (
+              {customHeroImage && (
                 <button
                   type="button"
                   onClick={handleResetHero}
                   className="text-[11px] text-[#FAF7F2]/80 hover:text-white underline"
                 >
-                  Reset Monogram
+                  Use Default Photo
                 </button>
               )}
             </div>
           </div>
 
-          {/* Decorative Floral Accents */}
-          <span
-            className="absolute -top-3 -left-3 text-2xl select-none"
-            aria-hidden="true"
-          >
-            🌸
-          </span>
-          <span
-            className="absolute -bottom-2 -right-2 text-2xl select-none"
-            aria-hidden="true"
-          >
-            🌿
-          </span>
         </div>
 
         <input
@@ -209,7 +201,7 @@ export const Hero: React.FC = () => {
 
         {/* Hero Title */}
         <h1 className="font-serif italic text-4xl sm:text-6xl md:text-7xl font-normal leading-[1.08] mb-4 text-[#FAF7F2] text-balance">
-          Lamirot <span className="text-[#D6B368] not-italic">&amp;</span> Biniyam
+          Biniyam <span className="text-[#D6B368] not-italic">&amp;</span> Lamirot
         </h1>
 
         {/* Date and Location */}
@@ -268,15 +260,8 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Call to Actions: RSVP & Calendar dropdown */}
+        {/* Call to Actions: Save the date & Calendar dropdown */}
         <div className="flex flex-wrap items-center justify-center gap-4 relative">
-          <a
-            href="#rsvp"
-            className="px-8 py-3.5 bg-[#D6B368] hover:bg-[#E2C278] text-[#152B20] text-xs sm:text-sm font-sans font-semibold uppercase tracking-[0.2em] rounded-xs shadow-lg transition-transform hover:-translate-y-0.5"
-          >
-            Kindly RSVP
-          </a>
-
           <div className="relative">
             <button
               type="button"

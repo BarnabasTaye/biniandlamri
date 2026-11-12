@@ -27,7 +27,7 @@ export const VenuesSection: React.FC = () => {
             <div className="p-8">
               <div className="flex items-center justify-between text-xs font-sans uppercase tracking-widest text-[#B68D40] mb-2 font-semibold">
                 <span>Sacred Matrimony</span>
-                <span>2:30 – 5:00 PM</span>
+                <span>2:00 – 4:30 PM</span>
               </div>
               <h3 className="font-serif italic text-3xl text-[#1B382B] mb-2">
                 Gerji Muluwengel Church
@@ -38,14 +38,14 @@ export const VenuesSection: React.FC = () => {
               </div>
 
               <p className="text-xs sm:text-sm text-[#4A5D52] font-sans leading-relaxed mb-6">
-                Where Lamirot &amp; Biniyam will make their vows before God and their community.
-                Please plan to be seated inside the main sanctuary by 2:15 PM so the processional can begin promptly at 2:30 PM.
+                Where Biniyam &amp; Lamirot will make their vows before God and their community.
+                Please plan to be seated inside the main sanctuary by 1:45 PM so the processional can begin promptly at 2:00 PM.
               </p>
 
               <div className="space-y-2 pt-4 border-t border-[#E5DCC8] text-xs text-[#6B766F] font-sans">
                 <div className="flex items-center gap-2">
                   <Clock className="w-3.5 h-3.5 text-[#B68D40]" />
-                  <span>Ceremony starts at 2:30 PM (8:30 Ethiopian Time)</span>
+                  <span>Church program starts at 2:00 PM (8:00 Ethiopian Time)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#B68D40]" />

@@ -42,7 +42,7 @@ export const InvitationCard: React.FC = () => {
           </p>
 
           <h3 className="font-serif italic text-3xl sm:text-5xl text-[#1B382B] my-4 leading-tight">
-            Lamirot &amp; Biniyam
+            Biniyam &amp; Lamirot
           </h3>
 
           <div className="my-6">
@@ -62,7 +62,7 @@ export const InvitationCard: React.FC = () => {
               </p>
               <div className="flex items-center gap-1.5 text-xs text-[#526458] mt-1 font-sans">
                 <Clock className="w-3.5 h-3.5 text-[#B68D40]" />
-                <span>2:30 PM (8:30 Ethiopian Time)</span>
+                <span>2:00 PM (8:00 Ethiopian Time)</span>
               </div>
               <p className="text-xs text-[#6B766F] mt-1">Gerji, Addis Ababa</p>
             </div>
@@ -90,13 +90,6 @@ export const InvitationCard: React.FC = () => {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#rsvp"
-              className="px-6 py-2.5 bg-[#1B382B] hover:bg-[#254A39] text-[#FAF7F2] text-xs font-sans font-semibold uppercase tracking-[0.18em] rounded-xs transition-colors shadow-sm"
-            >
-              Confirm Your Attendance
-            </a>
-
             <button
               type="button"
               onClick={handlePrint}

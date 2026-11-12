@@ -19,53 +19,6 @@
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
-@keyframes petalFall {
-  0% {
-    transform: translate3d(0, -10%, 0) rotate(0deg);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.85;
-  }
-  50% {
-    transform: translate3d(var(--drift-x, 40px), 55vh, 0) rotate(180deg);
-  }
-  85% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate3d(calc(var(--drift-x, 40px) * -0.6), 115vh, 0) rotate(380deg);
-    opacity: 0;
-  }
-}
-
-.animate-petal {
-  animation: petalFall linear infinite;
-  will-change: transform, opacity;
-}
-
-@keyframes gentleFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.animate-gentle-float {
-  animation: gentleFloat 5s ease-in-out infinite;
-}
-
-@keyframes goldShimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
 .gold-gradient-text {
   background: linear-gradient(135deg, #b68d40 0%, #ecd599 40%, #c99e4b 60%, #8c6721 100%);
   -webkit-background-clip: text;
@@ -90,16 +43,6 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #b68d40;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .animate-petal,
-  .animate-gentle-float {
-    animation: none !important;
-  }
 }
 
 /* Keep the keepsake invitation clean when printed */

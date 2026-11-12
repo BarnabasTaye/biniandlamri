@@ -3,7 +3,7 @@ import { ArrowUp, Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0 });
   };
 
   return (
@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <h3 className="font-serif italic text-3xl sm:text-4xl text-[#FAF7F2] mb-2">
-          Lamirot <span className="text-[#D6B368] font-normal not-italic">&amp;</span> Biniyam
+          Biniyam <span className="text-[#D6B368] font-normal not-italic">&amp;</span> Lamirot
         </h3>
 
         <p className="text-xs uppercase tracking-[0.3em] text-[#D6B368] font-sans mb-4">
@@ -35,17 +35,14 @@ export const Footer: React.FC = () => {
           <a href="#top" className="hover:text-[#D6B368] transition-colors">
             Home
           </a>
-          <a href="#story" className="hover:text-[#D6B368] transition-colors">
-            Our Story
+          <a href="#invitation" className="hover:text-[#D6B368] transition-colors">
+            Invitation
           </a>
           <a href="#schedule" className="hover:text-[#D6B368] transition-colors">
             Schedule
           </a>
           <a href="#venues" className="hover:text-[#D6B368] transition-colors">
             Venues
-          </a>
-          <a href="#rsvp" className="hover:text-[#D6B368] transition-colors">
-            RSVP
           </a>
           <a href="#guestbook" className="hover:text-[#D6B368] transition-colors">
             Guestbook

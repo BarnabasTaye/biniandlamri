@@ -3,7 +3,7 @@ import { Clock, CheckCircle2, Search } from 'lucide-react';
 import { SCHEDULE_DATA } from '../data/weddingData.ts';
 
 export const ScheduleSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'prep' | 'home' | 'church' | 'reception'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'groom' | 'bride' | 'church' | 'reception'>('all');
   const [clockMode, setClockMode] = useState<'dual' | 'standard' | 'ethiopian'>('dual');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -45,7 +45,7 @@ export const ScheduleSection: React.FC = () => {
             <span className="h-[1px] w-8 bg-[#B68D40]/40" />
           </div>
           <p className="text-xs sm:text-sm text-[#526458] font-sans mt-3 max-w-xl mx-auto">
-            A celebration of covenant and joy. Ethiopian time is calculated from dawn (6:00 AM standard = 12:00 ET).
+            The program begins at 10:00 AM at the groom’s home and moves to the bride, then to the church for the 8:00 Ethiopian time (2:00 PM) service. Ethiopian time is calculated from dawn (6:00 AM standard = 12:00 ET).
           </p>
         </div>
 
@@ -89,25 +89,25 @@ export const ScheduleSection: React.FC = () => {
             </button>
             <button
               type="button"
-              onClick={() => setActiveTab('prep')}
+              onClick={() => setActiveTab('groom')}
               className={`px-3 py-1.5 text-xs font-sans uppercase tracking-wider transition-colors whitespace-nowrap ${
-                activeTab === 'prep'
+                activeTab === 'groom'
                   ? 'bg-[#1B382B] text-[#FAF7F2] font-semibold'
                   : 'text-[#526458] hover:text-[#1B382B]'
               }`}
             >
-              Morning Prep
+              Groom’s Side
             </button>
             <button
               type="button"
-              onClick={() => setActiveTab('home')}
+              onClick={() => setActiveTab('bride')}
               className={`px-3 py-1.5 text-xs font-sans uppercase tracking-wider transition-colors whitespace-nowrap ${
-                activeTab === 'home'
+                activeTab === 'bride'
                   ? 'bg-[#1B382B] text-[#FAF7F2] font-semibold'
                   : 'text-[#526458] hover:text-[#1B382B]'
               }`}
             >
-              Family Residences
+              Bride’s Side
             </button>
             <button
               type="button"

@@ -1,8 +1,8 @@
-# Lamirot &amp; Biniyam Wedding
+# B &amp; L · Biniyam &amp; Lamirot Wedding
 
 A single-page wedding website for the holy matrimony of Lamirot and Biniyam in Addis Ababa, Ethiopia on **Saturday, November 14, 2026**.
 
-Features include a live countdown, order of events with Ethiopian time, venue directions, photo gallery, RSVP form, guestbook, registry details, and a printable keepsake invitation.
+Features include a live countdown, the day's program (from 10:00 AM at the groom's home through the 8:00 Ethiopian time church service and evening dinner) with Ethiopian time, venue directions, photo gallery, guestbook, Q&A, and a printable keepsake invitation.
 
 ## Run locally
 
@@ -28,6 +28,6 @@ The production output is written to `dist/`.
 
 ## Notes
 
-- RSVPs, guestbook wishes, uploaded gallery photos, and the hero portrait are stored in the browser's `localStorage`. They persist on the same device/browser but are not shared between guests. A shared backend is required for multi-device persistence.
+- Guestbook wishes, uploaded gallery photos, and the hero portrait are stored in the browser's `localStorage`. They persist on the same device/browser but are not shared between guests. A shared backend is required for multi-device persistence.
 - The bridal organizer portal is a local preview and uses the demo passcode `2026`.
 - `npm run lint` runs the TypeScript type check.

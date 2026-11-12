@@ -11,11 +11,11 @@ export const EthiopianCustomsFaq: React.FC = () => {
     },
     {
       q: 'What should I expect during the church ceremony at Gerji Muluwengel?',
-      a: 'The service begins with uplifting gospel praise and worship, followed by the pastoral message, sacred vows, and ring exchange. Guests are asked to be seated inside by 2:15 PM so that worship and the bridal processional can commence at 2:30 PM without distraction.',
+      a: 'The church program begins at 8:00 Ethiopian time (2:00 PM) with uplifting gospel praise and worship, followed by the pastoral message, sacred vows, and ring exchange. Guests are asked to be seated inside by 1:45 PM so that worship and the processional can commence promptly without distraction.',
     },
     {
       q: 'Are children invited to attend?',
-      a: 'Yes, children and families are warmly cherished. Please indicate the total number of guests, including children, on your RSVP so that adequate table seating and children’s meal arrangements are properly prepared.',
+      a: 'Yes, children and families are warmly cherished. Please let the couple know the total number of guests, including children, so that adequate table seating and children’s meal arrangements are properly prepared.',
     },
     {
       q: 'Is there parking available at both Gerji Muluwengel Church and The Glasshouse?',
@@ -68,11 +68,7 @@ export const EthiopianCustomsFaq: React.FC = () => {
                   aria-expanded={isOpen}
                 >
                   <span className="font-medium leading-snug">{faq.q}</span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-[#B68D40] shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
-                  />
+                  <ChevronDown className="w-4 h-4 text-[#B68D40] shrink-0" />
                 </button>
 
                 {isOpen && (
