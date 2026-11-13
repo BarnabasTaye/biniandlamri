@@ -122,9 +122,49 @@ export const Hero: React.FC = () => {
       id="top"
       className="relative overflow-hidden bg-gradient-to-b from-[#162F24] via-[#1B382B] to-[#12241C] text-[#FAF7F2] pt-14 pb-20 md:pt-20 md:pb-28"
     >
-      {/* Subtle background ornamentation */}
+      {/* Wedding pattern: interlocking rings, lace diamonds & florals in gold */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none text-[#D6B368]"
+        aria-hidden="true"
+        role="presentation"
+      >
+        <defs>
+          <pattern id="weddingLace" width="112" height="112" patternUnits="userSpaceOnUse">
+            <g fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
+              {/* Diamond trellis */}
+              <path d="M0 56 L56 0 L112 56 L56 112 Z" opacity="0.5" />
+              <path d="M0 0 L112 112 M112 0 L0 112" opacity="0.18" />
+              {/* Interlocking wedding rings at the tile centre */}
+              <circle cx="45" cy="56" r="12.5" opacity="0.55" />
+              <circle cx="67" cy="56" r="12.5" opacity="0.55" />
+              {/* Small heart above the rings */}
+              <path
+                d="M56 32.5c-2.1-3.1-6.6-2.2-6.6 1.5 0 2.9 3.6 5.5 6.6 7.4 3-1.9 6.6-4.5 6.6-7.4 0-3.7-4.5-4.6-6.6-1.5Z"
+                opacity="0.45"
+              />
+              {/* Floral sprigs at the tile corners */}
+              <g opacity="0.4">
+                <path d="M0 0c4 2 6 6 6 10M0 0c-2 4-1 8 2 11" />
+                <path d="M112 0c-4 2-6 6-6 10M112 0c2 4 1 8-2 11" />
+                <path d="M0 112c4-2 6-6 6-10M0 112c-2-4-1-8 2-11" />
+                <path d="M112 112c-4-2-6-6-6-10M112 112c2-4 1-8-2-11" />
+              </g>
+              {/* Fine lace dots */}
+              <g fill="currentColor" stroke="none" opacity="0.35">
+                <circle cx="56" cy="8" r="1.4" />
+                <circle cx="56" cy="104" r="1.4" />
+                <circle cx="8" cy="56" r="1.4" />
+                <circle cx="104" cy="56" r="1.4" />
+              </g>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#weddingLace)" opacity="0.18" />
+      </svg>
+
+      {/* Soft candlelight glow behind the ornamentation */}
       <div
-        className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#D6B368_1px,transparent_1px)] [background-size:24px_24px]"
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_50%_0%,rgba(214,179,104,0.12),transparent_65%)]"
         aria-hidden="true"
       />
 
@@ -137,7 +177,13 @@ export const Hero: React.FC = () => {
                 src={heroImage}
                 alt="Biniyam & Lamirot on their wedding day"
                 onError={() => setHeroImageFailed(true)}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover"
+                style={{
+                  // Zoom into the couple and keep only a sliver of the top cropped
+                  objectPosition: 'center 42%',
+                  transform: 'scale(1.12)',
+                  transformOrigin: 'center 60%',
+                }}
               />
             ) : (
               <div className="flex flex-col items-center justify-center p-4">
